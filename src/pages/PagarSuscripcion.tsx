@@ -14,7 +14,7 @@ const PagarSuscripcion =() => {
   const handleRegistrarPago = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const registroPago = await axios.post("http://localhost:3000/pago/", 
+      const registroPago = await axios.post("https://api-hexagonal-alavazarez.onrender.com/pago/", 
       {
         id_Pago,
         nombre,
@@ -37,7 +37,7 @@ const PagarSuscripcion =() => {
   };
 
   useEffect(()=>{
-    const socket = io("http://localhost:3002/");
+    const socket = io("https://api-hexagonal-socket.onrender.com/");
 
     socket.on("newClient", (message)=>{
       console.log("Ciclo concluido");
